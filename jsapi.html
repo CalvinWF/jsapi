@@ -104,19 +104,22 @@
                 
                 function recording() {
                     window.AlipayJSBridge && AlipayJSBridge.call('metro_monitorScreenRecoding',{'enable':'false'}, function(result) {
-                        alert(result);
+                        var str = JSON.stringify(result);
+                        alert(str);
                     });
                 }
                 
                 function getThirdPartyAuthToken() {
                     window.AlipayJSBridge && AlipayJSBridge.call('metro_thirdPartyAuthToken',{'thirdCode':'biddingCode'}, function(result) {
-                        alert(result);
+                        var str = JSON.stringify(result);
+                        alert(str);
                     });
                 }
                 
                 function getThirdPartyAuthToken2() {
                     window.AlipayJSBridge && AlipayJSBridge.call('metro_thirdPartyAuthToken',{'thirdCode':'qiangSheng'}, function(result) {
-                        alert(result);
+                        var str = JSON.stringify(result);
+                        alert(str);
                     });
                 }
                 
