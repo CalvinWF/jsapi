@@ -75,7 +75,8 @@
             <p class="descript_title">Metro JSApi 测试</p>
             <button class="jsapiButton" onclick="getThirdPartyAuthToken()">获取三方授权biddingCode</button>
             <button class="jsapiButton" onclick="getThirdPartyAuthToken2()">获取三方授权qiangsheng</button>
-            <button class="jsapiButton" onclick="getThirdPartyAuthToken3()">获取三方授权metropolitanSportsCode</button>
+            <button class="jsapiButton" onclick="getThirdPartyAuthToken3()">获取三方授权getHomeCode</button>
+            <button class="jsapiButton" onclick="getThirdPartyAuthToken4()">获取三方授权urbanSportsCode</button>
             
             <script type="text/javascript">
                 function jsapi_call(apiName, params) {
@@ -126,6 +127,13 @@
 
                 function getThirdPartyAuthToken3() {
                     window.AlipayJSBridge && AlipayJSBridge.call('metro_thirdPartyAuthToken',{'thirdCode':'getHomeCode'}, function(result) {
+                        var str = JSON.stringify(result);
+                        alert(str);
+                    });
+                }
+
+                function getThirdPartyAuthToken4() {
+                    window.AlipayJSBridge && AlipayJSBridge.call('metro_thirdPartyAuthToken',{'thirdCode':'urbanSportsCode'}, function(result) {
                         var str = JSON.stringify(result);
                         alert(str);
                     });
