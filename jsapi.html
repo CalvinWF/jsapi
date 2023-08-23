@@ -125,7 +125,7 @@
                 }
 
                 function getThirdPartyAuthToken3() {
-                    window.AlipayJSBridge && AlipayJSBridge.call('metro_thirdPartyAuthToken',{'thirdCode':'metropolitanSportsCode'}, function(result) {
+                    window.AlipayJSBridge && AlipayJSBridge.call('metro_thirdPartyAuthToken',{'thirdCode':'getHomeCode'}, function(result) {
                         var str = JSON.stringify(result);
                         alert(str);
                     });
