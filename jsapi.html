@@ -77,6 +77,7 @@
             <button class="jsapiButton" onclick="getThirdPartyAuthToken2()">获取三方授权qiangsheng</button>
             <button class="jsapiButton" onclick="getThirdPartyAuthToken3()">获取三方授权getHomeCode</button>
             <button class="jsapiButton" onclick="getThirdPartyAuthToken4()">获取三方授权urbanSportsCode</button>
+            <button class="jsapiButton" onclick="goToSkinManagerPage()">goToSkinManagerPage</button>
             
             <script type="text/javascript">
                 function jsapi_call(apiName, params) {
@@ -139,6 +140,12 @@
                     });
                 }
                 
+                function goToSkinManagerPage() {
+                    window.AlipayJSBridge && AlipayJSBridge.call('goToSkinManagerPage',{}, function(result) {
+                        var str = JSON.stringify(result);
+                        alert(str);
+                    });
+                }
             </script>
     </body>
 </html>
