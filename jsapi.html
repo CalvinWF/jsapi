@@ -77,10 +77,13 @@
             <button class="jsapiButton" onclick="getThirdPartyAuthToken2()">获取三方授权qiangsheng</button>
             <button class="jsapiButton" onclick="getThirdPartyAuthToken3()">获取三方授权getHomeCode</button>
             <button class="jsapiButton" onclick="getThirdPartyAuthToken4()">获取三方授权urbanSportsCode</button>
+            <p class="descript_title">Metro JSApi 分步授权 测试</p>
+            <button class="jsapiButton" onclick="getThirdPartyAuthToken5()">分步授权</button>
             <p class="descript_title">Metro 皮肤</p>
             <button class="jsapiButton" onclick="goToSkinManagerPage()">皮肤管理页面</button>
             <button class="jsapiButton" onclick="openShareActionSheet()">分享面板</button>
             <button class="jsapiButton" onclick="openShareActionSheetNoImage()">分享面板有图片</button>
+
             
             <script type="text/javascript">
                 function jsapi_call(apiName, params) {
@@ -170,6 +173,13 @@
                         'title':'大标题',
                         'subTitle':'小标题'
                     }, function(result) {
+                        var str = JSON.stringify(result);
+                        alert(str);
+                    });
+                }
+
+                function getThirdPartyAuthToken5(){
+                    window.AlipayJSBridge && AlipayJSBridge.call('metro_thirdPartyAuthToken',{'thirdCode':'carbonCode',"authCodeList":["metroUserId","mobile","realName","identityCode","certTp","avatar","nickName","age","gender"]}, function(result) {
                         var str = JSON.stringify(result);
                         alert(str);
                     });
