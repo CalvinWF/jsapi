@@ -179,7 +179,7 @@
                 }
 
                 function getThirdPartyAuthToken5(){
-                    window.AlipayJSBridge && AlipayJSBridge.call('metro_thirdPartyAuthToken',{'thirdCode':'carbonCode',"authCodeList":["metroUserId","mobile","realName","identityCode","certTp","avatar","nickName","age","gender"]}, function(result) {
+                    window.AlipayJSBridge && AlipayJSBridge.call('metro_thirdPartyAuthToken',{'thirdCode':'mobilePointsCode',"authCodeList":["metroUserId","mobile"]}, function(result) {
                         var str = JSON.stringify(result);
                         alert(str);
                     });
