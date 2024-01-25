@@ -40,6 +40,7 @@
             <p class="descript_content">
             startSession/pushWindow在示例中均推入了本身页面， popTo只能退回到本Session内的页面，popWindow无Session限制
             </p>
+            <button class="jsapiButton" onclick="jsapi_call_getUserId()">getUserId</button>
             <button class="jsapiButton" onclick="jsapi_call('isLogin', {url:window.location.href})">isLogin</button>
             <button class="jsapiButton" onclick="jsapi_call('startSession'),{appId:'200000003', url:window.location.href}">startSession</button>
             <button class="jsapiButton" onclick="jsapi_call('popWindow')">popWindow</button>
@@ -92,6 +93,12 @@
                     });
                 }
                 
+                function jsapi_call_getUserId() {
+                    window.AlipayJSBridge && AlipayJSBridge.call('getUserId', function(result){
+                        console.log(result);
+                    });
+                }
+
                 function jsapi_call_showLoading() {
                     window.AlipayJSBridge && AlipayJSBridge.call('showLoading');
                     setTimeout("window.AlipayJSBridge && AlipayJSBridge.call('hideLoading')", 3000);
