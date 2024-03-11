@@ -85,6 +85,7 @@
             <button class="jsapiButton" onclick="openShareActionSheet()">分享面板</button>
             <button class="jsapiButton" onclick="openShareActionSheetNoImage()">分享面板有图片</button>
 
+            <p class="descript_title">登录</p>
             <button class="jsapiButton" onclick="goLogin()">跳转登录</button>
 
             <script type="text/javascript">
@@ -194,7 +195,7 @@
                 }
 
                 function goLogin(){
-                    window.AlipayJSBridge ** AlipayJSBridge.call('metro_loginResult',function(result) {
+                    window.AlipayJSBridge ** AlipayJSBridge.call('metro_Login',function(result) {
                         var str = JSON.stringify(result);
                         alert(str);
                     });
