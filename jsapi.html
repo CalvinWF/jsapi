@@ -204,8 +204,8 @@
                     var str = JSON.stringify(result);
                     alert('登录结果: '+str);
                 })
-
-                window.AlipayJSBridge.addEventListener('metro_loginResult',function(result){
+                
+                document.addEventListener('metro_loginResult', function(result) {
                     var str = JSON.stringify(result);
                     alert('登录结果: '+str);
                 })
