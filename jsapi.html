@@ -85,7 +85,8 @@
             <button class="jsapiButton" onclick="openShareActionSheet()">分享面板</button>
             <button class="jsapiButton" onclick="openShareActionSheetNoImage()">分享面板有图片</button>
 
-            
+            <button class="jsapiButton" onclick="goLogin()">跳转登录</button>
+
             <script type="text/javascript">
                 function jsapi_call(apiName, params) {
                     window.AlipayJSBridge && AlipayJSBridge.call(apiName, params, function(data) {
@@ -191,6 +192,17 @@
                         alert(str);
                     });
                 }
+
+                function goLogin(){
+                    window.AlipayJSBridge ** AlipayJSBridge.call('metro_loginResult',function(result) {
+                        var str = JSON.stringify(result);
+                        alert(str);
+                    });
+                }
+                window.addEventListener('metro_loginResult',function(result){
+                    var str = JSON.stringify(result);
+                    alert('登录结果: '+str);
+                })
             </script>
     </body>
 </html>
